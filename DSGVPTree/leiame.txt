@@ -1,0 +1,16 @@
+Classe Nova: VpTree.java. Responsável por criar a árvore VpTree e efetuar a busca pelo vizinho mais próximo e pelos vizinhos a partir de um raio definido.
+
+Mudanças nas classes:
+
+- SparkSimGroupBy.java: 
+
+	01) Transformação do Dataframe pivot em uma lista de tuplas (linha 158)
+	02) Criação da VpTree (linha 168)
+	03) Transformação da VpTree em uma variável broadcast, para que seja enviada uma mesma cópia para todos os nós do cluster (linha 170)
+	04) Ajuste na chamada da função SGBFunctions, com a inclusão de Vptree (linha 179)
+
+- SGBFunctions.java
+
+	01) Mudança nos parâmetros de entrada da função partitionRecords, inclusão da VpTree (linha 26)
+	02) Mudança na busca pelo vizinho mais próximo em "Non-window partitioning". Passou a buscar pelo método getNearestNeighbor da VpTree (linha 47)
+	03) Mudança na busca pelo vizinho mais próximo em "Window partitioning". Passou a buscar apenas os vizinhos mais próximo dentro de um range, definido por  (2 * epsilon) + a distância para o vizinho mais próximo fora da janela, a partir do método getAllInRange (linha 76)
