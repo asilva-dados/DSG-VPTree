@@ -1,0 +1,9 @@
+The groupingDataGenerator file outputs data files for clustering analysis. 
+To Run, simply compile then execute, afterwhich prompts will guide you in 
+the creation of data set. The output is a collection of files, one per scaleFactor, 
+with the naming convention of 
+outputFileName_SF_ScaleFactorNumber_DIM_nimDim_EPS_epsilon_PPSF_numberOfPointsPerSF_Min_minPoints_Max_maxPoints
+
+The rows of each record are randomized data for each nth dimension, whereas 
+each column is a diffrent dimension. 
+The first two values of a record are the recordID Number and the group they belong to.
