@@ -59,3 +59,36 @@ Since Spark is running in distributed mode, place the data files into your clust
 
 command: spark-submit --class SparkSimGroupBy  --master yarn --deploy-mode client ~/SparkVpTree.jar 80 200 200 50000 0 100 mrsimjoindsg saidaSpark   
 
+### How to generate data sets
+1. Download groupingDataGenerator.java java files.
+2. Create a new project in Eclipse and place the java files in the ```src``` folder.
+3. To Run, simply compile then execute, afterwhich prompts will guide you in 
+the creation of data set.
+4. The output is a collection of files, one per scaleFactor, with the naming convention of outputFileName_SF_ScaleFactorNumber_DIM_nimDim_EPS_epsilon_PPSF_numberOfPointsPerSF_Min_minPoints_Max_maxPoints
+
+Parameters:  
+```
+Enter the Scale Factor
+10
+Number Of Points Per Scale Factor 
+200000
+Enter the number of Dimensions
+64
+Enter the minimum points per group
+50
+Enter the maxium points per group
+100
+Enter the Epsilon
+100
+Enter the file name --No extension
+data
+```   
+
+The files will be generated with the pattern below:
+
+data_SF_1_DIM_64_EPS_100_PPSF_200000_MIN_50_MAX_100_PIVOTS_2698.csv 
+data_SF_2_DIM_64_EPS_100_PPSF_200000_MIN_50_MAX_100_PIVOTS_5391.csv 
+data_SF_3_DIM_64_EPS_100_PPSF_200000_MIN_50_MAX_100_PIVOTS_8077.csv 
+....
+data_SF_10_DIM_64_EPS_100_PPSF_200000_MIN_50_MAX_100_PIVOTS_26861.csv 
+
