@@ -7,3 +7,28 @@ outputFileName_SF_ScaleFactorNumber_DIM_nimDim_EPS_epsilon_PPSF_numberOfPointsPe
 The rows of each record are randomized data for each nth dimension, whereas 
 each column is a diffrent dimension. 
 The first two values of a record are the recordID Number and the group they belong to.
+
+To generate the data for reproducing experiments with 64 dimensions, ranging from SF1 to SF10 , run the groupingDataGenerator program and pass the following parameters:
+
+Enter the Scale Factor
+10
+Number Of Points Per Scale Factor 
+200000
+Enter the number of Dimensions
+64
+Enter the minimum points per group
+50
+Enter the maxium points per group
+100
+Enter the Epsilon
+100
+Enter the file name --No extension
+data
+
+The files will be generated with the pattern below:
+
+data_SF_1_DIM_64_EPS_100_PPSF_200000_MIN_50_MAX_100_PIVOTS_2698.csv 
+data_SF_2_DIM_64_EPS_100_PPSF_200000_MIN_50_MAX_100_PIVOTS_5391.csv 
+data_SF_3_DIM_64_EPS_100_PPSF_200000_MIN_50_MAX_100_PIVOTS_8077.csv 
+....
+data_SF_10_DIM_64_EPS_100_PPSF_200000_MIN_50_MAX_100_PIVOTS_26861.csv 
